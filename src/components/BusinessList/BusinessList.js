@@ -6,11 +6,13 @@ import './BusinessList.css';
 class BusinessList extends React.Component {
   render(){
     return (
-      <div className="BusinessList">
+      <div className="BusinessList">{
         this.props.businesses.map(business=>{
-    <Business businesses={this.props.businesses} />
-  });
-</div>
+          return <Business business={business} />
+        })
+      }
+      <Business {this.props.businesses[0]}/>
+      </div>
     );
   }
 }
